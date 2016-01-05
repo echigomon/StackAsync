@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="MyWindows.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyWindows"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="textBlock01" HorizontalAlignment="Left" Margin="50,50,0,0" TextWrapping="Wrap" Text="StackAsync" VerticalAlignment="Top" Height="50" Width="300" FontSize="32"/>
+        <TextBlock x:Name="textBlock02" HorizontalAlignment="Left" Margin="50,326,0,0" TextWrapping="Wrap" Text="Text" VerticalAlignment="Top" Height="50" Width="178" FontSize="32" RenderTransformOrigin="0.484,7.732"/>
+        <TextBox x:Name="textBox01" HorizontalAlignment="Left" Margin="50,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="221" Width="1155"/>
+        <TextBox x:Name="textBox02" HorizontalAlignment="Left" Margin="233,331,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="45" Width="619"/>
+        <Button x:Name="button01" Content="Push" HorizontalAlignment="Left" Margin="50,426,0,0" VerticalAlignment="Top" Height="50" Width="200" RenderTransformOrigin="-0.112,0.489" Click="button01_Click"/>
+        <Button x:Name="button02" Content="Pop" HorizontalAlignment="Left" Margin="281,426,0,0" VerticalAlignment="Top" Height="50" Width="200" RenderTransformOrigin="-0.112,0.489" Click="button02_Click"/>
+        <Button x:Name="button03" Content="Que" HorizontalAlignment="Left" Margin="511,426,0,0" VerticalAlignment="Top" Height="50" Width="200" RenderTransformOrigin="-0.112,0.489" Click="button03_Click"/>
+        <Button x:Name="button04" Content="View" HorizontalAlignment="Left" Margin="756,426,0,0" VerticalAlignment="Top" Height="50" Width="200" RenderTransformOrigin="-0.112,0.489" Click="button04_Click"/>
+        <Button x:Name="button05" Content="Count" HorizontalAlignment="Left" Margin="1005,426,0,0" VerticalAlignment="Top" Height="50" Width="200" RenderTransformOrigin="-0.112,0.489" Click="button05_Click"/>
+        <Button x:Name="button06" Content="Chknum" HorizontalAlignment="Left" Margin="50,515,0,0" VerticalAlignment="Top" Height="50" Width="200" RenderTransformOrigin="-0.112,0.489" Click="button06_Click"/>
+        <Button x:Name="button07" Content="SPush" HorizontalAlignment="Left" Margin="281,515,0,0" VerticalAlignment="Top" Height="50" Width="200" RenderTransformOrigin="-0.112,0.489" Click="button07_Click"/>
+        <Button x:Name="button08" Content="SPop" HorizontalAlignment="Left" Margin="511,515,0,0" VerticalAlignment="Top" Height="50" Width="200" RenderTransformOrigin="-0.112,0.489" Click="button08_Click"/>
+        <Button x:Name="button09" Content="SQue" HorizontalAlignment="Left" Margin="756,515,0,0" VerticalAlignment="Top" Height="50" Width="200" RenderTransformOrigin="-0.112,0.489" Click="button09_Click"/>
+        <Button x:Name="button10" Content="SView" HorizontalAlignment="Left" Margin="1005,515,0,0" VerticalAlignment="Top" Height="50" Width="200" RenderTransformOrigin="-0.112,0.489" Click="button10_Click"/>
+        <Button x:Name="button11" Content="SCount" HorizontalAlignment="Left" Margin="50,605,0,0" VerticalAlignment="Top" Height="50" Width="200" RenderTransformOrigin="-0.112,0.489" Click="button11_Click"/>
+        <Button x:Name="button12" Content="Chkstr" HorizontalAlignment="Left" Margin="281,605,0,0" VerticalAlignment="Top" Height="50" Width="200" RenderTransformOrigin="-0.112,0.489" Click="button12_Click"/>
+        <Button x:Name="button13" Content="Reset" HorizontalAlignment="Left" Margin="1005,605,0,0" VerticalAlignment="Top" Height="50" Width="200" RenderTransformOrigin="-0.112,0.489" Click="button13_Click"/>
+
+    </Grid>
+</Page>
