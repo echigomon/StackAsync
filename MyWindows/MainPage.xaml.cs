@@ -60,37 +60,103 @@ namespace MyWindows
         #endregion
 
         #region ［Ｐｏｐ］ボタン押下
-        private void button02_Click(object sender, RoutedEventArgs e)
+        private async void button02_Click(object sender, RoutedEventArgs e)
         {   // [Pop]ボタン押下
             WriteLineResult(@"[Pop]");
+
+            try
+            {
+                int i = await stack.CountAsync();           // スタックの登録件数を取り出す
+                if (i > 0)
+                {   // スタックの登録有り？
+                    int num = await stack.PopAsync();       // スタックの情報を取り出す
+                    WriteLineResult("buffer[0] = {1}", num);
+                }
+                else
+                {
+                    WriteLineResult(@"buffer[] = {Empty}");
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {   // 空スタックからの情報取り出し
+                WriteLineResult(@"ArgumentOutOfRangeException");
+            }
+            catch (FormatException)
+            {
+                int i = await stack.CountAsync();
+                WriteLineResult("Format Exception : Count[{0}]", i);
+            }
         }
         #endregion
 
         #region ［Ｑｕｅ］ボタン押下
-        private void button03_Click(object sender, RoutedEventArgs e)
+        private async void button03_Click(object sender, RoutedEventArgs e)
         {   // [Que]ボタン押下
             WriteLineResult(@"[Que]");
+
+            try
+            {   // 入力情報を数字に変換
+                int num = int.Parse(textBox02.Text);
+
+                int i = await stack.QueAsync(num);       // スタックの情報をキュー設定する
+                WriteLineResult("buffer[0] = {1}", i);
+            }
+            catch (FormatException)
+            {
+                WriteLineResult("Format Exception:[{0}]", textBox02.Text);
+            }
+            catch(ArgumentOutOfRangeException)
+            {   // 空スタックからの情報取り出し
+                WriteLineResult(@"ArgumentOutOfRangeException");
+            }
         }
         #endregion
 
         #region ［Ｖｉｅｗ］ボタン押下
-        private void button04_Click(object sender, RoutedEventArgs e)
+        private async void button04_Click(object sender, RoutedEventArgs e)
         {   // [View]ボタン押下
             WriteLineResult(@"[View]");
+
+            int i = await stack.CountAsync();                   // スタックの登録件数を取り出す
+            WriteLineResult("Count = {0}", i);
+            int pos = int.Parse(textBox02.Text);
+            if (pos < i)
+            {   // スタックの登録有り？
+                int num = await stack.ViewAsync(pos);           // スタックの指定位置の情報を取り出す
+                WriteLineResult("buffer[{0}] = {1}", pos, num);
+            }
         }
         #endregion
 
         #region ［Ｃｏｕｎｔ］ボタン押下
-        private void button05_Click(object sender, RoutedEventArgs e)
+        private async void button05_Click(object sender, RoutedEventArgs e)
         {   // [Count]ボタン押下
             WriteLineResult(@"[Count]");
+
+            int i = await stack.CountAsync();           // スタックの登録件数を取り出す
+            WriteLineResult("Count = {0}", i);
         }
         #endregion
 
         #region ［Ｃｈｋｎｕｍ］ボタン押下
-        private void button06_Click(object sender, RoutedEventArgs e)
+        private async void button06_Click(object sender, RoutedEventArgs e)
         {   // [Chknum]ボタン押下
             WriteLineResult(@"[Chknum]");
+
+            int i = await stack.CountAsync();           // スタックの登録件数を取り出す
+            WriteLineResult("Count = {0}", i);
+
+            try
+            {   // 入力情報を数字に変換
+                int num = int.Parse(textBox02.Text);
+
+                int pos = await stack.chknumAsync(num); // スタックの指定位置の情報を取り出す
+                WriteLineResult("buffer[{0}] = {1}", pos, num);
+            }
+            catch (FormatException)
+            {
+                WriteLineResult("Format Exception:[{0}]", textBox02.Text);
+            }
         }
         #endregion
 
@@ -132,9 +198,12 @@ namespace MyWindows
         #endregion
 
         #region ［ＳＣｏｕｎｔ］ボタン押下
-        private void button11_Click(object sender, RoutedEventArgs e)
+        private async void button11_Click(object sender, RoutedEventArgs e)
         {   // [SCount]ボタン押下
             WriteLineResult(@"[SCount]");
+
+            int i = await stack.SCountAsync();
+            WriteLineResult("SCount = {0}", i);
         }
         #endregion
 
