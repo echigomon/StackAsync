@@ -11,8 +11,8 @@ namespace StackAsync
     public class CS_StackAsync
     {
         #region 共有領域
-        private List<int> buffer;       // 数値用
-        private List<string> strbuf;    // 文字列用
+        private static List<int> buffer;       // 数値用
+        private static List<string> strbuf;    // 文字列用
         private CS_LskipAsync lskip;    // 文字列整形
         private CS_RskipAsync rskip;
         #endregion
